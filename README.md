@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# KB Tool - Knowledge base is a tool is a search tool developed for creating, adding, updating, and deleting the recent erros which we come across the development and safely adding the data so that it will be useful on someone who stopped by the same error. It has a fix for every error a user get occured
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
