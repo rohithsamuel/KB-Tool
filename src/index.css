@@ -1,0 +1,416 @@
+/* //dashboard style started// */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(50, 123, 192);
+}
+
+.topnav p{
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 16px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+
+
+.topnav  button {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 16px 20px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.topnav button:hover {
+  background-color: bisque;
+  color: black;
+}
+
+/* .cap{
+  color: black;
+  background-color: #405acc ;
+} */
+
+.topnav button.active {
+  background-color: #405acc;
+  color: white;
+}
+
+table, th, td {
+  border:1px solid rgb(128, 39, 39);
+  background-color: rgb(235, 238, 195)
+
+}
+
+/* table.center {
+  margin-left: auto; 
+  margin-right: auto;
+} */
+
+
+th, td {
+ 
+  width: 150px;
+  height: 100px;
+  min-height: min-content;
+  table-layout: auto;
+  text-align: justify;
+  margin-right: 30%;
+  padding: 10px;
+ 
+  text-align: justify;
+  margin-left:50px;
+}
+th {
+  height: min-content;
+ 
+  text-align: center;
+  padding: 20px;
+}
+.table{
+width: 100%;
+
+ 
+  height: 60px;
+}
+
+ 
+/* @import url('http://fonts.googleapis.com/css?family=poppins:100,200,300,400,500,600,700,800,900'); */
+.action .profile img{
+  margin:0;
+  padding:0;
+  font-family:'poppins',sans-serif;
+} 
+
+.action{
+  position: fixed;
+  top:-37px;
+  right:200px;
+  
+}
+.action .profile{
+  position:relative;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.action{
+text-align-last: left;
+  width: 250px;
+  
+}
+.profile{
+  left:150%;
+  top:42px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.action .profile img{
+
+position: absolute;
+top:0px;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+
+}
+.action .menu{
+  position: absolute;
+  top:95px;
+  right: -188px;
+  padding: 10px 10px;
+  background: rgb(245, 218, 218);
+  width: 150px;
+  box-sizing:  0 4px 20px rgb(189, 35, 35);
+  border-radius: 16px;
+  transition: 0.5s;
+  
+
+ }
+.action.menu.active{
+  top:-40px;
+  visibility: visible;
+  opacity: 1;
+}
+.action .menu::before{
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  width: 25px;
+  height: 15px;
+  background: rgb(245, 218, 218);
+  transform: rotate(45deg);
+}
+.action .menu{
+  width: 85%;
+  height: 185px;
+  text-align:center;
+  font-size: 18px;
+  padding: 20px 0;
+  padding-left: 15px;
+  padding-right: 0px;
+  padding-bottom: 5px;
+  padding-top: 0px;
+  font-weight: 500;
+  font-size: 14px;
+  color:#555;
+  line-height: 1.0em;
+
+ }
+.action .menu h3 span{
+  font-size: 13px;
+  color: #413c3c;
+  font-weight: 500;
+}
+.action .menu ul li {
+  list-style:none;
+  padding: 8px 0;
+  border-top: 1px solid rgba(0, 0,0,0, 05);
+  direction: flex;
+  align-items: center;
+  justify-content: center; 
+ }
+.action .menu ul li img{
+  max-width: 30px;
+  margin-right: 18px;
+  margin-left: -22px;
+  margin-top: -30px;
+  margin-bottom: -10px;
+  opacity:0.8;
+  transition: 0.5x;
+
+}
+.action .menu ul li:hover img{
+  opacity: 1;
+}
+
+.action .menu ul li a{
+  display:inline-block;
+  text-decoration: none;
+  color: rgb(17, 1, 1);
+  font-weight: 500;
+  transition: 0.5x;
+}
+.action .menu ul a:hover{
+  color: #ff5d94;
+}
+
+
+
+
+/* //login and signup css// */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+input,
+button {
+  font-family: "Ubuntu", sans-serif;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* login and signup.css started */
+
+ .container {
+  max-width: 550px;
+  max-height: 830px;
+  margin: 0 auto;
+  background-image: linear-gradient(rgba(228, 116, 228, 0.76),rgba(103, 202, 209, 0.836));;
+  padding: 100px;
+  border-radius: 3px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+h2 {
+  color: #0c0c0c;
+  text-align: center;
+  margin-top: 10px;
+  text-transform: capitalize;
+  font-size: 32px;
+}
+
+.loginform {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px 0 50px 0;
+}
+
+.loginform form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.loginform form label {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+.loginform form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 3px solid #a5a5a5;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.loginform form input:hover {
+  border-color: #0d6efd;
+}
+
+.loginform form input:focus {
+  border-color: #8ebd38d5;
+}
+
+[type="submit"] {
+  background: #0d6efd;
+  color: white;
+  border: 1px solid  #0d6efd;
+  border-radius: 10px;
+  padding: 12px 0;
+  margin-left: 25%;
+  cursor: pointer;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-top: 5px;
+  font-weight: bold;
+  width: 50%;
+}
+
+[type="submit"]:disabled {
+  background: #000000;
+}
+
+[type="submit"]:disabled:hover {
+  box-shadow: none;
+}
+
+
+.success-msg,
+.err-msg {
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.success-msg {
+  color: #ffffff;
+  background-color: #20c997;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.bottom-link {
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+  font-variant: normal;
+}
+
+/* //login and signup.css end// */
+
+/* //myaccount.css// */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.nav {
+  overflow: hidden;
+text-align:left;
+padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(32, 21, 134);
+}
+
+
+.nav a.active {
+  text-decoration: none;
+  font-size: 35px;
+  height: 40px;
+  color: rgb(255, 255, 255);
+}
+.design{
+  background-color: rgb(238, 212, 230);
+  margin-left:20%;
+  box-sizing:content-box;  
+  width:760px;
+  height:250px;
+  padding: 15px;  
+  border: 2px solid rgb(14, 17, 224);
+}
+.inside{
+  text-align: center;
+  text-justify: initial;
+  text-orientation: inherit;
+  padding-left: 10px;
+}
+
+.topic{
+  color: #dc3545;
+}
+h3{
+  text-align: center;
+  color: rgb(14, 17, 224);
+}
+.path{
+  background: rgb(94, 124, 223);
+  color: white;
+  border: 1px solid  #e1e5eb;
+  border-radius: 15px;
+  padding: 13px 0;
+  padding-right: 15px;
+  padding-left: 45px;
+  margin-left: 220px;
+  cursor: pointer;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-top: 58px;
+  font-weight: bold;
+  text-decoration: none;
+  width: 20%;
+}
+
+.way {
+  background: rgb(94, 124, 223);
+  color: white;
+  border:1px solid  #ebeff5;
+  border-radius: 15px;
+  padding: 13px 0;
+  padding-left: 55px;
+  margin-left: 54%;
+  cursor: pointer;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-top: -84px;
+  font-weight: bold;
+  text-decoration: none;
+  width: 20%;
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
