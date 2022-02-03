@@ -1,10 +1,13 @@
-import React from "react";                //import react from react
+import React from "react";    
+//import react from react
 import { Link } from "react-router-dom";                 //import link for cancel and save use page redirected
                                                  
 //myaccount.js  use Function Component 
+
+
 function Myaccount() {
         return (
-                                                         //create myaccount details in kb tool            
+  //create myaccount details in kb tool            
             <form>
              <div className="nav">
              <a class="active" href="#home"><b>KB Tool</b></a>
