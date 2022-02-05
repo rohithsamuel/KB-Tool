@@ -91,7 +91,7 @@ const Home = () => {
    <h1 className='title'>FAQ</h1><br/>
     <div className='tablesize'>
   <Table  bordered hover >
-  <thead >
+  <thead class="table-info" >
       <tr>
 
         <th>Language</th>
@@ -105,7 +105,7 @@ const Home = () => {
   </thead>
 
 
-  <tbody>
+  <tbody class="table-secondary">
   {faq.filter(details=>{
     if (search ===""){
       return details;

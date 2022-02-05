@@ -79,14 +79,14 @@ body {
 }
 
 
-table, td , th {
+table, td  {
   
-  background-color: rgb(252, 221, 164);
   box-sizing: border-box;
   table-layout: fixed;
   color: rgb(19, 18, 18);
 
 } 
+
 .tablesize{
   width: 70%;
   position: relative;
