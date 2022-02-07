@@ -33,10 +33,10 @@ const Home = () => {
 
  return (
       <div className='styl'>
-  <nav class="navbar navbar-expand-sm bg-info">
+  <nav className="navbar navbar-expand-sm bg-info">
       <div className='container-fluid pt-3 pb-3  nav-align '  >
         <ul className='navbar-nav nav-text-align  ' >
-       <li className="navbar-brand " ><a> <b>KB Tool</b></a></li>
+       <li className="navbar-brand " ><b>KB Tool</b></li>
 
       <li className="nav-item d-flex ">
        <input  className='form-control me-2' type="text" placeholder='Search here'
@@ -67,7 +67,7 @@ const Home = () => {
 
    <div className="action">
      {
-       status?<div class="menu">
+       status?<div className="menu">
           <span>Welcome ! {user.name}</span><br/><br/>
           {/* <span>{user.email}</span><br/><br/> */}
        
@@ -91,7 +91,7 @@ const Home = () => {
    <h1 className='title'>FAQ</h1><br/>
     <div className='tablesize'>
   <Table  bordered hover >
-  <thead class="table-info" >
+  <thead className="table-info" >
       <tr>
 
         <th>Language</th>
@@ -105,7 +105,7 @@ const Home = () => {
   </thead>
 
 
-  <tbody class="table-secondary">
+  <tbody className="table-secondary">
   {faq.filter(details=>{
     if (search ===""){
       return details;

@@ -6,7 +6,7 @@ import {UserContext} from '../context/UserContext'                //import link 
 //myaccount.js  use Function Component 
 
 const Myaccount = () => {
-     const {user, logout} = useContext(UserContext);
+     const {user} = useContext(UserContext);
         return (
                                                          //create myaccount details in kb tool            
             <form>
