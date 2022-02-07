@@ -1,9 +1,6 @@
-
-
-
 import {useState,useContext} from 'react';
 import {UserContext} from '../context/UserContext';
-
+import { Helmet } from 'react-helmet';
 function FAQForm(){
 
 
@@ -49,9 +46,13 @@ function FAQForm(){
     }
 
     return (
+        <div>
+  <Helmet>
+    <title>FAQ Form</title>
+  </Helmet>
         <div className='container'>
         <div className="loginform">
-            <h2>Technology FAQ</h2>
+            <h2>Knowledge Based FAQ</h2>
             <form onSubmit={submitForm}>
                 <label>Language</label>
                 <input type="text" name="language" onChange={onChangeInput} placeholder="Language" id="language" value={formData.language} required />
@@ -89,6 +90,7 @@ function FAQForm(){
                
             </form>
             </div>
+        </div>
         </div>
     )
 }
