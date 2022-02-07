@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState} from 'react';
 import Table from 'react-bootstrap/Table'
+import { Helmet } from 'react-helmet';
 
 
 
@@ -32,6 +33,11 @@ const Home = () => {
 
 
  return (
+  <div>
+  <Helmet>
+    <title>Dashboard</title>
+  </Helmet>
+
       <div className='styl'>
   <nav class="navbar navbar-expand-sm bg-info">
       <div className='container-fluid pt-3 pb-3  nav-align '  >
@@ -88,7 +94,7 @@ const Home = () => {
   
   <br></br>
   
-   <h1 className='title'>FAQ</h1><br/>
+   <h1 className='title'>Knowledge Based FAQ</h1><br/>
     <div className='tablesize'>
   <Table  bordered hover >
   <thead class="table-info" >
@@ -159,7 +165,7 @@ const Home = () => {
   </div>
   <br/>
 </div>
-
+</div>
  );
  }
 

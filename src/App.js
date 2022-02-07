@@ -6,12 +6,21 @@ import Register from './components/Register';
 import Home from './components/Home';
 import Myaccount from "./components/myaccount";
 import FAQForm from './components/FAQForm';
+import { Helmet } from 'react-helmet';
+
+
+
 
 function App() {
 
   const {user} = useContext(UserContext); 
  
   return (
+    <div>
+  <Helmet>
+    <title>KB Tool</title>
+  </Helmet>
+  
    
         <BrowserRouter>
           <Routes>
@@ -28,7 +37,7 @@ function App() {
             <Route path="/myaccount" element={<Myaccount />} />
           </Routes>
         </BrowserRouter>
-  
+        </div>
   );
 }
 

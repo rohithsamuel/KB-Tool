@@ -83,7 +83,7 @@ table, td  {
   
   box-sizing: border-box;
   table-layout: fixed;
-  color: rgb(19, 18, 18);
+  color: rgb(19, 17, 17);
 
 } 
 
@@ -95,9 +95,8 @@ table, td  {
 
 th {
   width: 200px;
-  height: 70px;
+  height: 80px;
   padding: 10px;
-
 }
 
 
@@ -341,8 +340,8 @@ body {
 }
 .nav {
   overflow: hidden;
-text-align:left;
-padding-top: 20px;
+  text-align:left;
+  padding-top: 20px;
   padding-bottom: 20px;
   background-color: rgb(32, 21, 134);
 }
@@ -415,10 +414,80 @@ h3{
   text-decoration: inherit;
 }
 
-  
+/* // faqform style started//
 
+.border {
+  max-width: 550px;
+  max-height: 830px;
+  margin: 0 auto;
+  background-image: linear-gradient(rgba(228, 116, 228, 0.76),rgba(103, 202, 209, 0.836));;
+  padding: 100px;
+  border-radius: 3px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
 
+h2 {
+  color: #0c0c0c;
+  text-align: center;
+  margin-top: 10px;
+  text-transform: capitalize;
+  font-size: 32px;
+}
 
+.logform{
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px 0 50px 0;
+}
+
+.logform {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.logform form label {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+.logform form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 3px solid #a5a5a5;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.logform form input:hover {
+  border-color: #0d6efd;
+}
+
+.logform form input:focus {
+  border-color: #8ebd38d5;
+}
+
+[type="submit"] {
+  background: #0d6efd;
+  color: white;
+  border: 1px solid  #0d6efd;
+  border-radius: 10px;
+  padding: 12px 0;
+  margin-left: 25%;
+  cursor: pointer;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-top: 5px;
+  font-weight: bold;
+  width: 50%;
+}
+
+[type="submit"]:disabled {
+  background: #000000;
+}
+
+[type="submit"]:disabled:hover {
+  box-shadow: none;
+} */
 
 
 
