@@ -50,9 +50,9 @@ function FAQForm(){
   <Helmet>
     <title>FAQ Form</title>
   </Helmet>
-        <div className='container'>
-        <div className="loginform">
-            <h2>Knowledge Based FAQ</h2>
+        <div className='project'>
+        <div className="model">
+            <h2>Knowledge Based FAQ</h2><br></br>
             <form onSubmit={submitForm}>
                 <label>Language</label>
                 <input type="text" name="language" onChange={onChangeInput} placeholder="Language" id="language" value={formData.language} required />
@@ -64,11 +64,11 @@ function FAQForm(){
 
 
                 <label>Error</label>
-                <input type="text" name="error" onChange={onChangeInput} placeholder="Error" id="error" value={formData.error} required />
+                <textarea type="textarea" name="error" onChange={onChangeInput} placeholder="Error" id="error" value={formData.error} required />
                 
 
                 <label>Fixes</label>
-                <input type="text" name="fixes" onChange={onChangeInput} placeholder="Enter fixes" id="fixes" value={formData.fixes} required />
+                <textarea type="textarea" name="fixes" onChange={onChangeInput} placeholder="Enter fixes" id="fixes" value={formData.fixes} required />
                 
                 <label>Created by</label>
                 <input type="text" name="createdby" onChange={onChangeInput} placeholder="Creator name" id="createdby" value={formData.createdby} required />

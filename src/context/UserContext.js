@@ -51,28 +51,6 @@ export const UserContextProvider = ({children}) => {
             return {success:0, message:'Server Error!'};
         }
     }
-
-
-
-
-    // const techFaq = async () => {
-    //     setWait(true);
-    //     try{
-    //         const {data} = await Axios.get('register.php',{
-                
-    //         });
-    //         setWait(false);
-    //         return data;
-    //     }
-    //     catch(err){
-    //         setWait(false);
-    //         return {success:0, message:'Server Error!'};
-    //     }
-    // }
-
-
-
-
       
 
     const loginUser = async ({email,password}) => {
