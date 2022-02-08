@@ -5,32 +5,27 @@ import axios from 'axios';
 import { useEffect, useState} from 'react';
 import Table from 'react-bootstrap/Table'
 import { Helmet } from 'react-helmet';
+import React from 'react';  
 
-
-
-
-const Home = () => {
+    const Home = () => {
     const {user, logout} = useContext(UserContext);
     const[faq, setFaq] = useState([]);
     const [search, setSearch]= useState("");
-    const [status,setStatus]=useState(false)
+    const [status,setStatus]=useState(false);
+    const [del, setDel] = useState([]);
 
- const getData = async () =>
+
+
+     const getData = async () =>
  {
     const result = await axios.get("http://localhost/php-auth-api/display.php");
-    console.log(result.data.faq);
+    //console.log(result.data.faq);
     setFaq(result.data.faq);
 
   }
-
-
-
-    useEffect(() =>{
+      useEffect(() =>{
       getData();
     },[]);
-
-
-
 
  return (
   <div>
@@ -83,31 +78,23 @@ const Home = () => {
 
            <span><img src="https://encrypted-tbn0.gstatic.com/images?  q=tbn:ANd9GcRoUVOY3XFxmVJ449PV3OSMBHp7A5FVrmBgKL4ptJkeTP2uNAFI0RcSsWvoHzeVxRPuDTA&usqp=CAU" alt='not loaded' />
            <button onClick={logout} className="logout btn btn-dark">Logout</button> </span>
-        
-
-        </div>:null
-     } 
+           </div>:null
+       } 
     </div>
-  </div>
-
-
-  
-  <br></br>
-  
-   <h1 className='title'>Knowledge Based FAQ</h1><br/>
+    </div>
+    <br></br>
+    <h1 className='title'>Knowledge Based FAQ</h1><br/>
     <div className='tablesize'>
-  <Table  bordered hover >
+    <Table  bordered hover >
   <thead class="table-info" >
       <tr>
-
         <th>Language</th>
         <th>Module</th>
         <th>Error</th>
         <th>Fixes</th>
         <th>Createdby</th>
         <th>Date</th>
-
-       </tr>
+        </tr>
   </thead>
 
 
@@ -141,7 +128,7 @@ const Home = () => {
     }
    }).
    
-  map((details) =>(
+  reverse().map((details) =>(
 
     <tr key={details.id}>
       <td>{details.language}</td>
@@ -150,14 +137,11 @@ const Home = () => {
       <td>{details.fixes}</td>
       <td>{details.createdby}</td>
       <td>{details.date}</td>
-      
-
-    </tr>
+      </tr>
    
   )
    
   )}
-
 
   </tbody>
   </Table>
@@ -168,7 +152,4 @@ const Home = () => {
 </div>
  );
  }
-
-
-
 export default Home;
