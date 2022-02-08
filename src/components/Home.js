@@ -3,8 +3,41 @@ import {UserContext} from '../context/UserContext'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState} from 'react';
-import Table from 'react-bootstrap/Table'
+// import Table from 'react-bootstrap/Table';
 import { Helmet } from 'react-helmet';
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
+
+
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+    fontSize: 18,
+    border:"1px solid white"
+      },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 15,
+    border: "1px solid black"
+ 
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  
+}));
+
 
 
 
@@ -25,6 +58,21 @@ const Home = () => {
 
 
 
+//   const apiDelete = async(id, e) =>
+//  {
+//     e.preventDefault();
+//     const del =  await axios.delete(`http://localhost/php-auth-api/delete.php/${id}`)
+//     .then(()=>{
+//       getData();
+
+//     })
+//     console.log(del);
+//     // setFaq(del);
+
+//   }
+
+
+
     useEffect(() =>{
       getData();
     },[]);
@@ -33,16 +81,16 @@ const Home = () => {
 
 
  return (
-  <div>
+  <div className='style'>
   <Helmet>
     <title>Dashboard</title>
   </Helmet>
 
-      <div className='styl'>
+      <div >
   <nav className="navbar navbar-expand-sm bg-info">
       <div className='container-fluid pt-3 pb-3  nav-align '  >
         <ul className='navbar-nav nav-text-align  ' >
-       <li className="navbar-brand " ><b>KB Tool</b></li>
+       <li className="navbar-brand " ><h2>KB Tool</h2></li>
 
       <li className="nav-item d-flex ">
        <input  className='form-control me-2' type="text" placeholder='Search here'
@@ -60,9 +108,6 @@ const Home = () => {
       
         </li>
         </ul>
-
-
-
       </div>
 
   </nav>
@@ -85,7 +130,7 @@ const Home = () => {
            <button onClick={logout} className="logout btn btn-dark">Logout</button> </span>
         
 
-        </div>:null
+        </div>: null
      } 
     </div>
   </div>
@@ -95,24 +140,22 @@ const Home = () => {
   <br></br>
   
    <h1 className='title'>Knowledge Based FAQ</h1><br/>
-    <div className='tablesize'>
-  <Table  bordered hover >
-  <thead className="table-info" >
-      <tr>
+    <div className='tablesize '>
 
-        <th>Language</th>
-        <th>Module</th>
-        <th>Error</th>
-        <th>Fixes</th>
-        <th>Createdby</th>
-        <th>Date</th>
-
-       </tr>
-  </thead>
-
-
-  <tbody className="table-secondary">
-  {faq.filter(details=>{
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 800 }} aria-label="customized table">
+        <TableHead>
+          <TableRow sx={{ border: 1 }}>
+            <StyledTableCell >Language</StyledTableCell>
+            <StyledTableCell align="center">Module</StyledTableCell>
+            <StyledTableCell align="center"> Error</StyledTableCell>
+            <StyledTableCell align="center">Fixes</StyledTableCell>
+            <StyledTableCell align="center">Createdby</StyledTableCell>
+            <StyledTableCell align="center">Date</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+        {faq.filter(details=>{
     if (search ===""){
       return details;
     }
@@ -139,28 +182,25 @@ const Home = () => {
     else{
       return null;
     }
-   }).
-   
-  map((details) =>(
+   }) 
+     .reverse().map((details) =>(
+            <StyledTableRow key={details.id}>
+              <StyledTableCell component="th" scope="row" >
+                {details.language}
+              </StyledTableCell>
+              <StyledTableCell align="center">{details.module}</StyledTableCell>
+              <StyledTableCell align="center">{details.error}</StyledTableCell>
+              <StyledTableCell align="center">{details.fixes}</StyledTableCell>
+              
+              <StyledTableCell align="center">{details.createdby}</StyledTableCell>
+              <StyledTableCell align="center">{details.date}</StyledTableCell>
+            </StyledTableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
 
-    <tr key={details.id}>
-      <td>{details.language}</td>
-      <td>{details.module}</td>
-      <td>{details.error}</td>
-      <td>{details.fixes}</td>
-      <td>{details.createdby}</td>
-      <td>{details.date}</td>
-      
 
-    </tr>
-   
-  )
-   
-  )}
-
-
-  </tbody>
-  </Table>
 
   </div>
   <br/>

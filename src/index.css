@@ -3,7 +3,9 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+.style{
+  /* width: 1250px; */
+}
 
 
 .topnav {
@@ -25,6 +27,8 @@ body {
   position: relative;
   left: 250px;
 }
+
+
 .response{
   position: relative;
   left: 200px;
@@ -38,65 +42,43 @@ body {
 }
 
 .title{
- position: relative;
- left: 600px;
-}
-
-.topnav p{
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 16px 20px;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-
-.topnav  button {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 16px 20px;
-  text-decoration: none;
-  font-size: 25px;
-}
-
-.topnav button:hover {
-  background-color: bisque;
-  color: black;
+ margin-left: 400px;
 }
 
 
 
-.topnav button.active {
-  background-color: #405acc;
-  color: white;
-}
+
+
 
 .test{
   width: 70%;
   margin: 50px;
 }
 
-
+/* 
 table, td  {
   
-  box-sizing: border-box;
+  text-align: center;
   table-layout: fixed;
   color: black;
-
+  
 } 
-
-.tablesize{
-  width: 70%;
-  position: relative;
-  left: 30px;
+.bordered{
+ border: 2px solid blueviolet;
 }
 
-th {
+.tablesize{
+  width: 100%;
+  position: relative;
+  left: 30px;
+  /* border: 2px solid saddlebrown; */
+/* } */
+
+/* th {
   width: 200px;
   height: 70px;
   padding: 10px;
+  text-align: center;
 
 }
 
@@ -105,10 +87,11 @@ th {
 td{
   width: 300px;
   height: 70px;
+  text-align: center;
 
   padding: 30px;
   
-}
+} */ */
 
 
 
@@ -417,10 +400,11 @@ h3{
 
 /* faq form design */
 .project{
-  max-width: 700%;
-  max-height: 800px;
+  max-width: 1000px;
+  max-height: auto;
   margin: 0 auto;
-  background-image: linear-gradient(rgba(46, 141, 146, 0.76),rgba(128, 209, 103, 0.836));;
+  background-image: linear-gradient(rgba(228, 116, 228, 0.76),rgba(103, 202, 209, 0.836));;
+  /* background-image: linear-gradient(rgba(46, 141, 146, 0.76),rgba(128, 209, 103, 0.836));; */
   padding: 120px;
   border-radius: 3px;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -466,6 +450,10 @@ h2 {
 
 .model form input:focus {
   border-color: #8ebd38d5;
+}
+
+textarea{
+  height: 100px;
 }
 
   
