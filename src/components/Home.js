@@ -13,9 +13,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
-
-
+// import Pagination from '@awsui/components-react/pagination';
+// import { usePagination } from 'use-awsui';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -44,7 +43,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     const[faq, setFaq] = useState([]);
     const [search, setSearch]= useState("");
     const [status,setStatus]=useState(false);
-    const [del, setDel] = useState([]);
+    // const ITEMS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
 
@@ -56,29 +55,24 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
   }
 
-
-
-//   const apiDelete = async(id, e) =>
-//  {
-//     e.preventDefault();
-//     const del =  await axios.delete(`http://localhost/php-auth-api/delete.php/${id}`)
-//     .then(()=>{
-//       getData();
-
-//     })
-//     console.log(del);
-//     // setFaq(del);
-
-//   }
-
-
-
     useEffect(() =>{
       getData();
     },[]);
 
+    // function MyTable() {
+    //   const { currentPageIndex, handleChange, pagesCount, paginate } =
+      //   usePagination({
+      //     itemsCount: ITEMS.length,
+      //     pageSize: 4,
+      //   });
+    
+      // const items = paginate(ITEMS);
+    
+
+
+
  return (
-  <div className='style'>
+          <div className='style'>
   <Helmet>
     <title>Dashboard</title>
   </Helmet>
@@ -138,8 +132,23 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   
    <h1 className='title'>Knowledge Based FAQ</h1><br/>
     <div className='tablesize '>
+    
+      
+  
+
+
+
+
 
     <TableContainer component={Paper}>
+    {/* items={items}
+      pagination={
+        <Pagination
+          currentPageIndex={currentPageIndex}
+          onChange={handleChange}
+          pagesCount={pagesCount}/>
+        
+      } */}
       <Table sx={{ minWidth: 800 }} aria-label="customized table">
         <TableHead>
           <TableRow sx={{ border: 1 }}>
@@ -151,6 +160,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
             <StyledTableCell align="center">Date</StyledTableCell>
           </TableRow>
         </TableHead>
+     
+
         <TableBody>
         {faq.filter(details=>{
     if (search ===""){
@@ -203,6 +214,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   <br/>
 </div>
 </div>
+
  );
- }
+     }
+    
 export default Home;
