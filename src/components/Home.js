@@ -3,40 +3,14 @@ import {UserContext} from '../context/UserContext'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState} from 'react';
-// import Table from 'react-bootstrap/Table';
+import BootstrapTable from 'react-bootstrap-table-next';
 import { Helmet } from 'react-helmet';
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import paginationFactory from 'react-bootstrap-table2-paginator';
+import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css';
 
-
-
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-    fontSize: 18,
-    border:"1px solid white"
-      },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 15,
-    border: "1px solid black"
- 
-  },
-}));
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
-  },
-  
-}));
 
 
 
@@ -45,8 +19,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const Home = () => {
     const {user, logout} = useContext(UserContext);
     const[faq, setFaq] = useState([]);
-    const [search, setSearch]= useState("");
-    const [status,setStatus]=useState(false)
+    const [status,setStatus]=useState(false);
 
  const getData = async () =>
  {
@@ -54,30 +27,39 @@ const Home = () => {
     console.log(result.data.faq);
     setFaq(result.data.faq);
 
-  }
-
-
-
-//   const apiDelete = async(id, e) =>
-//  {
-//     e.preventDefault();
-//     const del =  await axios.delete(`http://localhost/php-auth-api/delete.php/${id}`)
-//     .then(()=>{
-//       getData();
-
-//     })
-//     console.log(del);
-//     // setFaq(del);
-
-//   }
-
-
-
-    useEffect(() =>{
+ }
+  useEffect(() =>{
       getData();
     },[]);
 
+ const columns =[
+   {dataField:'id' , text : 'ID'},
+   {dataField:'language', text:'Language', sort: true , filter: textFilter()},
+   {dataField:'module', text:'Module', filter:textFilter()},
+   {dataField:'error', text:'Issues / Info', filter:textFilter()},
+   {dataField:'fixes', text:'Fixes', filter:textFilter()}, 
+   {dataField:'createdby', text:'Created By',filter:textFilter()},
+   {dataField:'date', text:'Date'},  
+ ]  
 
+ const pagination = paginationFactory({
+   page:1,
+   sizePerPage: 10,
+   lastPageText:'>>',
+   firstPageText:'<<',
+   nextPageText:'>',
+   prePageText:'<',
+   showTotal: true,
+   alwaysShowAllBtns: true,
+   onPageChange: function(page, sizePerPage){
+     console.log('page', page);
+     console.log('sizePerPage', sizePerPage)
+   },
+   onSizePerPageChange:function(page, sizePerPage){
+    console.log('page', page);
+    console.log('sizePerPage', sizePerPage)
+   }
+ });
 
 
  return (
@@ -92,14 +74,10 @@ const Home = () => {
         <ul className='navbar-nav nav-text-align  ' >
        <li className="navbar-brand " ><h2>KB Tool</h2></li>
 
-      <li className="nav-item d-flex ">
-       <input  className='form-control me-2' type="text" placeholder='Search here'
-       onChange={e=>{
-         setSearch(e.target.value);
-       }}/></li>
-
+      
+        <li className='nav-item'><h1 className='title'>Knowledge Based FAQ</h1></li>
         <li className="nav-item response ">
-        <Link className='text-link btn btn-dark' to="FAQForm">Add New Response</Link>
+        <Link className='text-link btn btn-dark' to="FAQForm">Add New Issues / Info</Link>
 
         </li>
 
@@ -120,14 +98,14 @@ const Home = () => {
      {
        status?<div className="menu">
           <span>Welcome ! {user.name}</span><br/><br/>
-          {/* <span>{user.email}</span><br/><br/> */}
-       
-        <span >
+          <span >
            <img src="https://static.vecteezy.com/system/resources/thumbnails/000/550/731/small/user_icon_004.jpg" alt='not loaded' className='rounded-pill divimage' />
-          <Link className="active"to="myaccount " >Myaccount</Link> </span> <br/><br/>
+          <Link className="active"to="myaccount " >Myaccount</Link> 
+          </span> <br/><br/>
 
            <span><img src="https://encrypted-tbn0.gstatic.com/images?  q=tbn:ANd9GcRoUVOY3XFxmVJ449PV3OSMBHp7A5FVrmBgKL4ptJkeTP2uNAFI0RcSsWvoHzeVxRPuDTA&usqp=CAU" alt='not loaded' />
-           <button onClick={logout} className="logout btn btn-dark">Logout</button> </span>
+           <button onClick={logout} className="logout btn btn-dark">Logout</button> 
+           </span>
         
 
         </div>: null
@@ -139,73 +117,25 @@ const Home = () => {
   
   <br></br>
   
-   <h1 className='title'>Knowledge Based FAQ</h1><br/>
-    <div className='tablesize '>
-
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 800 }} aria-label="customized table">
-        <TableHead>
-          <TableRow sx={{ border: 1 }}>
-            <StyledTableCell >Language</StyledTableCell>
-            <StyledTableCell align="center">Module</StyledTableCell>
-            <StyledTableCell align="center"> Error</StyledTableCell>
-            <StyledTableCell align="center">Fixes</StyledTableCell>
-            <StyledTableCell align="center">Createdby</StyledTableCell>
-            <StyledTableCell align="center">Date</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-        {faq.filter(details=>{
-    if (search ===""){
-      return details;
-    }
-    else if (details.language.toLowerCase().includes(search.toLowerCase())){
-    return details;
-     }
-
-     else if (details.module.toLowerCase().includes(search.toLowerCase())){
-        return details;
-      }
-      
-    else if (details.fixes.toLowerCase().includes(search.toLowerCase())){
-      return details;
-    }
+   
+    <div className='tablesize'>
     
-    else if (details.error.toLowerCase().includes(search.toLowerCase())){
-      return details;
-    }
-
-    else if (details.createdby.toLowerCase().includes(search.toLowerCase())){
-      return details;
-    }
-     
-    else{
-      return null;
-    }
-   }) 
-     .reverse().map((details) =>(
-            <StyledTableRow key={details.id}>
-              <StyledTableCell component="th" scope="row" >
-                {details.language}
-              </StyledTableCell>
-              <StyledTableCell align="center">{details.module}</StyledTableCell>
-              <StyledTableCell align="center">{details.error}</StyledTableCell>
-              <StyledTableCell align="center">{details.fixes}</StyledTableCell>
-              
-              <StyledTableCell align="center">{details.createdby}</StyledTableCell>
-              <StyledTableCell align="center">{details.date}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-
+    <BootstrapTable bootstrap4
+     keyField='id' 
+     columns={columns}
+      data={faq} 
+      pagination={pagination}
+      filter={filterFactory()}
+      />
 
 
   </div>
   <br/>
+  
 </div>
+<br/>
 </div>
+
  );
  }
 

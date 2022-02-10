@@ -52,8 +52,8 @@ function FAQForm(){
   </Helmet>
         <div className='project'>
         <div className="model">
-            <h2>Knowledge Based FAQ</h2><br></br>
-            <form onSubmit={submitForm}>
+            <h2> Add New Issue / Info</h2><br></br>
+            <form onSubmit={submitForm} autoComplete="off">
                 <label>Language</label>
                 <input type="text" name="language" onChange={onChangeInput} placeholder="Language" id="language" value={formData.language} required />
               

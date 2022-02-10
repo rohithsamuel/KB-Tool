@@ -25,7 +25,7 @@ body {
 }
 .profile-icon{
   position: relative;
-  left: 250px;
+  left: 238px;
 }
 
 
@@ -42,7 +42,7 @@ body {
 }
 
 .title{
- margin-left: 400px;
+ margin-left: 180px;
 }
 
 
@@ -54,44 +54,6 @@ body {
   width: 70%;
   margin: 50px;
 }
-
-/* 
-table, td  {
-  
-  text-align: center;
-  table-layout: fixed;
-  color: black;
-  
-} 
-.bordered{
- border: 2px solid blueviolet;
-}
-
-.tablesize{
-  width: 100%;
-  position: relative;
-  left: 30px;
-  /* border: 2px solid saddlebrown; */
-/* } */
-
-/* th {
-  width: 200px;
-  height: 70px;
-  padding: 10px;
-  text-align: center;
-
-}
-
-
-
-td{
-  width: 300px;
-  height: 70px;
-  text-align: center;
-
-  padding: 30px;
-  
-} */ */
 
 
 
@@ -135,7 +97,10 @@ text-align-last: left;
   
 }
 
-
+.tablesize{
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
 
 .menu{
@@ -338,19 +303,21 @@ padding-top: 20px;
   color: rgb(255, 255, 255);
 }
 .design{
-  background-color: rgb(238, 212, 230);
-  margin-left:20%;
+  background-color: rgb(218, 216, 217);
+  margin-left: 25%;
   box-sizing:content-box;  
-  width:760px;
-  height:250px;
+  width:600px;
+  height:200px;
   padding: 15px;  
-  border: 2px solid rgb(14, 17, 224);
+  border: 2px solid rgb(28, 28, 29);
 }
 .inside{
   text-align: center;
   text-justify: initial;
   text-orientation: inherit;
   padding-left: 10px;
+  font-size: medium;
+  font-weight: bold;
 }
 
 .topic{
@@ -358,7 +325,7 @@ padding-top: 20px;
 }
 h3{
   text-align: center;
-  color: rgb(14, 17, 224);
+  color: rgb(21, 21, 24);
 }
 .path{
   background: rgb(94, 124, 223);
